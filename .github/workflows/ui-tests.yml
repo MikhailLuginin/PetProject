@@ -1,8 +1,10 @@
 name: UI Tests
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["Registration Tests"]   # ждём окончания registration
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
@@ -18,18 +20,20 @@ jobs:
       - name: Run UI tests
         run: docker compose run --rm bot pytest tests/ui --alluredir=allure-results
 
-      - name: Upload Allure results
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-ui
-          path: allure-results
-
       - name: Stop containers
         run: docker compose down
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
+          allure_history: allure-history
 
       - name: Deploy Allure report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-report
-          destination_dir: ui   # 🔹 UI-тесты будут в папке /ui/
+          destination_dir: ui
+
