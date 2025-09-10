@@ -2,7 +2,7 @@ name: Allure Aggregate Report
 
 on:
   workflow_run:
-    workflows: ["Registration Tests", "UI Tests", "API Tests"]
+    workflows: ["Base test", "UI Tests", "API Tests"]
     types:
       - completed
   workflow_dispatch:
@@ -14,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download Registration Allure
+      - name: Download Base Allure
         uses: actions/download-artifact@v4
         with:
-          name: allure-registration
-          path: allure-results/registration
+          name: allure-base
+          path: allure-results/base
 
       - name: Download UI Allure
         uses: actions/download-artifact@v4

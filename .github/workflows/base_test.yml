@@ -1,4 +1,4 @@
-name: Registration Tests
+name: Base test
 
 on:
   push:
@@ -15,8 +15,8 @@ jobs:
       - name: Build and start container
         run: docker compose up -d --build
 
-      - name: Run registration tests
-        run: docker compose run --rm bot pytest tests/registration --alluredir=allure-results
+      - name: Run base test
+        run: docker compose run --rm bot pytest tests/test_base --alluredir=allure-results
 
       - name: Stop containers
         run: docker compose down
@@ -31,5 +31,5 @@ jobs:
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-registration
+          name: allure-base
           path: allure-results

@@ -18,7 +18,7 @@ jobs:
         run: docker compose up -d --build
 
       - name: Run API tests
-        run: docker compose run --rm bot pytest tests/api --alluredir=allure-results
+        run: docker compose run --rm bot pytest tests/api_tests --alluredir=allure-results
 
       - name: Stop containers
         run: docker compose down
