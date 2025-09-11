@@ -3,7 +3,6 @@ name: Base test
 on:
   push:
     branches: [ "master" ]
-  workflow_dispatch:
 
 jobs:
   base-test:
@@ -26,7 +25,6 @@ jobs:
       - name: Run API tests with pytest and generate Allure results  # Запуск тестов
         run: |
           pytest tests/test_base --alluredir=allure-results --numprocesses 2
-          # Запускаем тесты с меткой "regression"
           # --alluredir=allure-results сохраняет результаты в папку allure-results
           # --numprocesses 2 - выполняем тесты в 2 потока (ускоряет выполнение)
 
