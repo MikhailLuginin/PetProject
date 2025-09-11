@@ -6,8 +6,8 @@ from tools.assertions.shema import validate_json_schema
 from tools.assertions.user.user import assert_create_user, assert_login_user
 
 
-@allure.parent_suite('API test case')
-@allure.epic('API test case')
+@allure.parent_suite('API tests')
+@allure.epic('Base test')
 @allure.feature('Базовый тест на создание юзера')
 @pytest.mark.no_auto_authorize
 class TestBase:
