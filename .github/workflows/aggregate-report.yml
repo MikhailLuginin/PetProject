@@ -16,6 +16,7 @@ jobs:
 
       - name: Download Base Allure
         uses: dawidd6/action-download-artifact@v11
+        if: always()
         with:
           name: allure-base
           workflow: base_test.yml
@@ -23,6 +24,7 @@ jobs:
 
       - name: Download API Allure
         uses: dawidd6/action-download-artifact@v11
+        if: always()
         with:
           name: allure-api
           workflow: api_test.yml
