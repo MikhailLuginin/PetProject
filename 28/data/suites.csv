@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","739","Создания юзера","API tests","Thu Sep 11 08:13:59 GMT 2025","passed","Thu Sep 11 08:14:00 GMT 2025","TestBase","test_base","",""
+"","126","Получение данных юзера","API tests","Thu Sep 11 08:14:38 GMT 2025","passed","Thu Sep 11 08:14:38 GMT 2025","TestUsers","test_users","",""
