@@ -3,6 +3,9 @@ name: API test
 on:
   workflow_run:
     workflows: [ "Base test" ]  # имя workflow, после которого запускается
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   api-test:
