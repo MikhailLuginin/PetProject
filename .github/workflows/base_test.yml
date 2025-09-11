@@ -13,6 +13,8 @@ jobs:
       - name: Check out repository  # Клонирование кода репозитория в среду CI/CD
         uses: actions/checkout@v4
 
+      - run: mkdir -p dist
+
       - name: Set up Python  # Установка Python
         uses: actions/setup-python@v5
         with:
@@ -42,4 +44,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-base
-          path: dist/
+          path: dist/ #allure-results
