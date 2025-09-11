@@ -2,7 +2,7 @@ name: Allure Aggregate Report
 
 on:
   workflow_run:
-    workflows: ["Base test"]
+    workflows: ["API test"]
     types:
       - completed
   workflow_dispatch:
