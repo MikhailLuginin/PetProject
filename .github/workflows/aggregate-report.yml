@@ -23,6 +23,7 @@ jobs:
 
       - name: Generate combined Allure Report
         uses: simple-elf/allure-report-action@v1.7
+        if: always()
         with:
           allure_results: allure-results
           allure_report: allure-report
@@ -30,6 +31,7 @@ jobs:
 
       - name: Deploy combined report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages  # Публикуем отчет в ветку gh-pages
