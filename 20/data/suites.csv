@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Sep 11 07:35:38 GMT 2025","Thu Sep 11 07:35:39 GMT 2025","677","API test case","test_base","TestBase","","","Создания юзера",""
