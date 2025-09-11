@@ -19,7 +19,7 @@ jobs:
         with:
           name: allure-base
           workflow: base_test.yml
-#          path: allure-results
+          path: allure-results
 
       - name: Generate combined Allure Report
         uses: simple-elf/allure-report-action@v1.7
