@@ -36,4 +36,3 @@ class TestBase:
             assert_status_code(login.status_code, HTTPStatus.OK)
             assert_login_user(schema, request)
             validate_json_schema(instance=login.json(), schema=schema.model_json_schema())
-

@@ -1,3 +1,6 @@
+import random
+import re
+
 from faker import Faker
 
 
@@ -14,6 +17,14 @@ class Fakers:
 
     def fake_password(self):
         return self.fake.password()
+
+    @staticmethod
+    def fake_phone():
+        phone = random.randint(10000000, 99999999999999999999)
+        return str(phone)
+
+    def fake_company(self):
+        return self.fake.company()
 
 
 fakers = Fakers()

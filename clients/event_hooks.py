@@ -10,7 +10,7 @@ def log_request_event_hook(request: Request):
     """
     Логирует информацию перед отправкой HTTP-запроса
     """
-    logger.info(f'Отправка запроса с методом {request.method} по адресу {request.url}')
+    logger.info(f'Отправка запроса с методом {request.method} по адресу {request.url} {request.headers} {request.content}')
 
 
 def log_response_event_hook(response: Response):

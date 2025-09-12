@@ -35,9 +35,9 @@ def assert_login_user(
         expected: LoginUserSchema
 ):
     """
-    Проверяет, что данные, возвращённые API после создания/обновления операции, соответствуют ожидаемым.
+    Проверяет, что данные, возвращённые API после авторизации юзера, соответствуют ожидаемым.
 
-    :param: actual (UserSchema): Фактические данные операции.
+    :param: actual (UserSchema): Фактические данные юзера.
     :param: expected (LoginUserSchema): Ожидаемые данные.
     :raises: AssertionError: Если значения полей не совпадают.
     """
@@ -49,3 +49,27 @@ def assert_login_user(
     assert_equal(actual.success, True, "success")
     assert_equal(actual.message, "Login successful", "message")
     assert_equal(actual.data.id, DataUser.user_id(), "id")
+
+
+@allure.step("Проверка изменения данных пользователя")
+def assert_update_user(
+        actual: UserSchema,
+        expected: UpdateUserSchema
+):
+    """
+    Проверяет, что данные, возвращённые API после изменения юзера, соответствуют ожидаемым.
+
+    :param: actual (UserSchema): Фактические данные юзера.
+    :param: expected (UpdateUserSchema): Ожидаемые данные.
+    :raises: AssertionError: Если значения полей не совпадают.
+    """
+    logger.info("Проверка авторизации пользователя")
+
+    assert_equal(actual.data.name, expected.name, "name")
+    assert_equal(actual.data.email, DataUser.user_email(), "email")
+    assert_equal(actual.status, 200, "status")
+    assert_equal(actual.success, True, "success")
+    assert_equal(actual.message, "Profile updated successful", "message")
+    assert_equal(actual.data.id, DataUser.user_id(), "id")
+    assert_equal(actual.data.phone, expected.phone, "phone")
+    assert_equal(actual.data.company, expected.company, "company")
