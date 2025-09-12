@@ -1,0 +1,9 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/login Headers({'host': 'practice.expandtesting.com', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-type': 'application/json', 'content-length': '61'}) b'{"email":"avgusteliseev@example.org","password":"_$7z%FPykg"}'
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/login
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом GET по адресу https://practice.expandtesting.com/notes/api/users/profile Headers({'host': 'practice.expandtesting.com', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-type': 'application/json', 'x-auth-token': '64e462e9782a4d6896c56e7c5e446572e0628a0329c04de589a9523360d83595', 'cookie': 'express:sess=eyJmbGFzaCI6e319; express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0'}) b''
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/profile
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     Проверка схемы:shema.py:24 Проверка правильности JSON схемы

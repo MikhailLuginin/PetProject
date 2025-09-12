@@ -1,0 +1,18 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/login Headers({'host': 'practice.expandtesting.com', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-type': 'application/json', 'content-length': '61'}) b'{"email":"avgusteliseev@example.org","password":"_$7z%FPykg"}'
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/login
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом PATCH по адресу https://practice.expandtesting.com/notes/api/users/profile Headers({'host': 'practice.expandtesting.com', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'connection': 'keep-alive', 'user-agent': 'python-httpx/0.28.1', 'content-type': 'application/json', 'x-auth-token': '64e462e9782a4d6896c56e7c5e446572e0628a0329c04de589a9523360d83595', 'cookie': 'express:sess=eyJmbGFzaCI6e319; express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0', 'content-length': '130'}) b'{"name":"\xd0\x93\xd0\xb0\xd0\xb2\xd1\x80\xd0\xb8\xd0\xbb\xd0\xb0 \xd0\x90\xd0\xb2\xd0\xb4\xd0\xb5\xd0\xb5\xd0\xb2\xd0\xb8\xd1\x87 \xd0\xa2\xd0\xb8\xd1\x85\xd0\xbe\xd0\xbd\xd0\xbe\xd0\xb2","phone":"73482574853556321528","company":"\xd0\x9e\xd0\x90\xd0\x9e \xc2\xab\xd0\x94\xd0\xbe\xd1\x80\xd0\xbe\xd1\x84\xd0\xb5\xd0\xb5\xd0\xb2\xd0\xb0\xc2\xbb"}'
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/profile
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     Проверка юзера:user.py:66 Проверка авторизации пользователя
+INFO     Базовая проверка:base.py:38 Проверка, что "name" равно Гаврила Авдеевич Тихонов
+INFO     Базовая проверка:base.py:38 Проверка, что "email" равно avgusteliseev@example.org
+INFO     Базовая проверка:base.py:38 Проверка, что "status" равно 200
+INFO     Базовая проверка:base.py:38 Проверка, что "success" равно True
+INFO     Базовая проверка:base.py:38 Проверка, что "message" равно Profile updated successful
+INFO     Базовая проверка:base.py:38 Проверка, что "id" равно 68c1e47506ff22028be8efe0
+INFO     Базовая проверка:base.py:38 Проверка, что "phone" равно 73482574853556321528
+INFO     Базовая проверка:base.py:38 Проверка, что "company" равно ОАО «Дорофеева»
+INFO     Проверка схемы:shema.py:24 Проверка правильности JSON схемы
