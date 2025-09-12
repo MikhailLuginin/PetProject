@@ -1,0 +1,18 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/login
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/login
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом PATCH по адресу https://practice.expandtesting.com/notes/api/users/profile
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/profile
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     Проверка юзера:user.py:66 Проверка авторизации пользователя
+INFO     Базовая проверка:base.py:38 Проверка, что "name" равно Мясникова Ульяна Геннадьевна
+INFO     Базовая проверка:base.py:38 Проверка, что "email" равно avgusteliseev@example.org
+INFO     Базовая проверка:base.py:38 Проверка, что "status" равно 200
+INFO     Базовая проверка:base.py:38 Проверка, что "success" равно True
+INFO     Базовая проверка:base.py:38 Проверка, что "message" равно Profile updated successful
+INFO     Базовая проверка:base.py:38 Проверка, что "id" равно 68c1e47506ff22028be8efe0
+INFO     Базовая проверка:base.py:38 Проверка, что "phone" равно 4289210224406243018
+INFO     Базовая проверка:base.py:38 Проверка, что "company" равно ОАО «Марков Носкова»
+INFO     Проверка схемы:shema.py:24 Проверка правильности JSON схемы
