@@ -1,0 +1,1 @@
+[{"uid":"b3d3cf0e9ba60d58","name":"Создания юзера","time":{"start":1757578638962,"stop":1757578639896,"duration":934},"status":"passed","severity":"normal"},{"uid":"4d92d790b5b88425","name":"Получение данных юзера","time":{"start":1757578672187,"stop":1757578672326,"duration":139},"status":"passed","severity":"normal"}]
