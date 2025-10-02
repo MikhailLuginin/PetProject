@@ -25,9 +25,12 @@ jobs:
           python -m pip install --upgrade pip  # Обновляем pip до последней версии
           pip install -r requirements.txt  # Устанавливаем зависимости, указанные в requirements.txt
 
+      - name: Ensure browsers are installed
+        run: python -m playwright install --with-deps
+
       - name: Run UI tests with pytest and generate Allure results  # Запуск тестов
         run: |
-          pytest tests/ui_tests --alluredir=allure-results --numprocesses 2
+          pytest -s -v tests/ui_tests --alluredir=allure-results --numprocesses 2
           # --alluredir=allure-results сохраняет результаты в папку allure-results
           # --numprocesses 2 - выполняем тесты в 2 потока (ускоряет выполнение)
 

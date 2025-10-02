@@ -3,6 +3,8 @@ name: Base test
 on:
   push:
     branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
   workflow_dispatch:
 
 jobs:
@@ -23,7 +25,7 @@ jobs:
           python -m pip install --upgrade pip  # Обновляем pip до последней версии
           pip install -r requirements.txt  # Устанавливаем зависимости, указанные в requirements.txt
 
-      - name: Run API tests with pytest and generate Allure results  # Запуск тестов
+      - name: Run Base test with pytest and generate Allure results  # Запуск теста
         run: |
           pytest tests/test_base --alluredir=allure-results --numprocesses 2
           # --alluredir=allure-results сохраняет результаты в папку allure-results
