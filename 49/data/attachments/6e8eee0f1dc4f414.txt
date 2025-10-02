@@ -1,0 +1,23 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/register
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 201, состояние: Created от https://practice.expandtesting.com/notes/api/users/register
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 201
+INFO     Проверка юзера:user.py:23 Проверка создания пользователя
+INFO     Базовая проверка:base.py:38 Проверка, что "name" равно Наталья Борисовна Муравьева
+INFO     Базовая проверка:base.py:38 Проверка, что "email" равно rjurik_37@example.com
+INFO     Базовая проверка:base.py:38 Проверка, что "status" равно 201
+INFO     Базовая проверка:base.py:38 Проверка, что "success" равно True
+INFO     Базовая проверка:base.py:38 Проверка, что "message" равно User account created successfully
+INFO     Проверка схемы:shema.py:24 Проверка правильности JSON схемы
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/login
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/login
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     Проверка юзера:user.py:44 Проверка авторизации пользователя
+INFO     Базовая проверка:base.py:38 Проверка, что "name" равно Наталья Борисовна Муравьева
+INFO     Базовая проверка:base.py:38 Проверка, что "email" равно rjurik_37@example.com
+INFO     Базовая проверка:base.py:38 Проверка, что "status" равно 200
+INFO     Базовая проверка:base.py:38 Проверка, что "success" равно True
+INFO     Базовая проверка:base.py:38 Проверка, что "message" равно Login successful
+INFO     Базовая проверка:base.py:38 Проверка, что "id" равно 68ded29c06ff22028beb161e
+INFO     Проверка схемы:shema.py:24 Проверка правильности JSON схемы
