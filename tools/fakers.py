@@ -26,5 +26,8 @@ class Fakers:
     def fake_company(self):
         return self.fake.company()
 
+    def fake_username(self):
+        return self.fake.user_name()
+
 
 fakers = Fakers()

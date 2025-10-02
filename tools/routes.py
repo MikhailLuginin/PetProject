@@ -3,4 +3,9 @@
 class APIRoutes:
 
     API = "/api"
-    USER = "/users"
+    notes = "/notes"
+    user = "/users"
+    profile = "/profile"
+    register = "/register"
+    login = "/login"
+    secure = "/secure"
