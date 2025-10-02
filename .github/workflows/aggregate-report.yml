@@ -35,7 +35,7 @@ jobs:
         if: always()
         with:
           name: allure-ui
-          workflow: "UI tests"
+          workflow: ui_tests.yml
           path: allure-results
 
       - name: Generate combined Allure Report
