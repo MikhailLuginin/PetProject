@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 pytest_plugins = (
@@ -8,9 +10,18 @@ pytest_plugins = (
 @pytest.fixture(scope="session")
 def browser_context_args(browser_context_args):
     return {
-
+        **browser_context_args,
         "viewport": {
             "width": 1920,
             "height": 1080,
         }
     }
+
+
+@pytest.fixture(scope="session")
+def launch_options():
+    """Настройки запуска браузера (headless / headed)"""
+    if os.getenv("CI") == "true":
+        return {
+            "headless": True,
+        }
