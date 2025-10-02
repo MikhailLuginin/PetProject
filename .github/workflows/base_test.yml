@@ -27,9 +27,8 @@ jobs:
 
       - name: Run Base test with pytest and generate Allure results  # Запуск теста
         run: |
-          pytest tests/test_base --alluredir=allure-results --numprocesses 2
+          pytest tests/test_base --alluredir=allure-results
           # --alluredir=allure-results сохраняет результаты в папку allure-results
-          # --numprocesses 2 - выполняем тесты в 2 потока (ускоряет выполнение)
 
       - name: Generate Allure Report
         if: always()

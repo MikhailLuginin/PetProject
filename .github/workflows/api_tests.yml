@@ -27,9 +27,8 @@ jobs:
 
       - name: Run API tests with pytest and generate Allure results  # Запуск тестов
         run: |
-          pytest tests/api_tests --alluredir=allure-results --numprocesses 2
+          pytest tests/api_tests --alluredir=allure-results 
           # --alluredir=allure-results сохраняет результаты в папку allure-results
-          # --numprocesses 2 - выполняем тесты в 2 потока (ускоряет выполнение)
 
       - name: Generate Allure Report
         if: always()
