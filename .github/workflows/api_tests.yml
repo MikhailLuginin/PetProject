@@ -32,6 +32,7 @@ jobs:
           # --numprocesses 2 - выполняем тесты в 2 потока (ускоряет выполнение)
 
       - name: Generate Allure Report
+        if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
           allure_results: allure-results
