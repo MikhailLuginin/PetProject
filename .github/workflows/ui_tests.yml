@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  api-test:
+  ui-tests:
     runs-on: ubuntu-latest
 
     steps:
