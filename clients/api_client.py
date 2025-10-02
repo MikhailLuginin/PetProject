@@ -2,7 +2,6 @@ from typing import Any
 
 from httpx import Client, Response, QueryParams
 from httpx._types import URLTypes, RequestData, RequestFiles
-
 from configs.config import DataUser
 
 
