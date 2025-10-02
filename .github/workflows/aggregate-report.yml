@@ -2,7 +2,7 @@ name: Allure Aggregate Report
 
 on:
   workflow_run:
-    workflows: ["API test"]
+    workflows: ["UI tests"]
     types:
       - completed
   workflow_dispatch:
@@ -27,7 +27,15 @@ jobs:
         if: always()
         with:
           name: allure-api
-          workflow: api_test.yml
+          workflow: api_tests.yml
+          path: allure-results
+
+      - name: Download UI Allure
+        uses: dawidd6/action-download-artifact@v11
+        if: always()
+        with:
+          name: allure-ui
+          workflow: ui_tests.yml
           path: allure-results
 
       - name: Generate combined Allure Report
