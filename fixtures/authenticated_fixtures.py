@@ -1,5 +1,4 @@
 from http import HTTPStatus
-
 import pytest
 
 from clients.builder import get_http_client
