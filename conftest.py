@@ -18,10 +18,25 @@ def browser_context_args(browser_context_args):
     }
 
 
+# @pytest.fixture(scope="session")
+# def launch_options():
+#     """Настройки запуска браузера (headless / headed)"""
+#     if os.getenv("CI") == "true":
+#         return {
+#             "headless": True,
+#         }
+#     else:
+#         return {
+#             "headless": False,
+#         }
 @pytest.fixture(scope="session")
 def launch_options():
     """Настройки запуска браузера (headless / headed)"""
-    if os.getenv("CI") == "true":
+    if os.getenv("CI") is None:
+        return {
+            "headless": False,
+        }
+    else:
         return {
             "headless": True,
         }
