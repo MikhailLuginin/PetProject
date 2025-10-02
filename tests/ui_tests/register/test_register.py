@@ -6,9 +6,9 @@ from tools.fakers import fakers
 from tools.routes import APIRoutes
 
 
-@allure.parent_suite('API tests')
-@allure.epic('API tests')
-@allure.feature('Тесты на юзера')
+@allure.parent_suite('UI tests')
+@allure.epic('UI tests')
+@allure.feature('Тесты на регистрацию')
 class TestRegister:
 
     @allure.title('Проверка успешной регистрации')
