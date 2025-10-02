@@ -30,9 +30,8 @@ jobs:
 
       - name: Run UI tests with pytest and generate Allure results  # Запуск тестов
         run: |
-          pytest -s -v tests/ui_tests --alluredir=allure-results --numprocesses 2
+          pytest -s -v tests/ui_tests --alluredir=allure-results
           # --alluredir=allure-results сохраняет результаты в папку allure-results
-          # --numprocesses 2 - выполняем тесты в 2 потока (ускоряет выполнение)
 
       - name: Generate Allure Report
         if: always()
