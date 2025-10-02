@@ -1,6 +1,4 @@
 import random
-import re
-
 from faker import Faker
 
 
