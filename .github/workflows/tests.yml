@@ -143,14 +143,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Загружаем артефакты из этого же workflow
-      - name: Download Base Allure
-        if: always()
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-base
-          path: allure-results/base
-
       - name: Download API Allure
         if: always()
         uses: actions/download-artifact@v4
