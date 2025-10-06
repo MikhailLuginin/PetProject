@@ -130,6 +130,12 @@ jobs:
           cp -r allure-results/api/* allure-results/merged/ || true
           cp -r allure-results/ui/* allure-results/merged/ || true
 
+      - name: Copy history from previous report
+        if: always()
+        run: |
+          mkdir -p allure-results/merged/history
+          cp -r gh-pages/history/* allure-results/merged/history/ || true
+
       - name: Generate combined Allure Report
         if: always()
         uses: simple-elf/allure-report-action@v1.12
