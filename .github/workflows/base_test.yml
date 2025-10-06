@@ -44,3 +44,9 @@ jobs:
         with:
           name: allure-base
           path: allure-results
+
+      - name: Save .env for next job
+        uses: actions/upload-artifact@v4
+        with:
+          name: env-file
+          path: .env

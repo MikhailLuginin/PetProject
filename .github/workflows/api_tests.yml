@@ -15,6 +15,12 @@ jobs:
       - name: Check out repository  # Клонирование кода репозитория в среду CI/CD
         uses: actions/checkout@v4
 
+      - name: Download .env from previous job
+        uses: actions/download-artifact@v4
+        with:
+          name: env-file
+          path: .
+
       - name: Set up Python  # Установка Python
         uses: actions/setup-python@v5
         with:
