@@ -30,12 +30,24 @@ jobs:
           pytest tests/test_base --alluredir=allure-results
           # --alluredir=allure-results сохраняет результаты в папку allure-results
 
+      - name: Save .env for next job
+        uses: actions/upload-artifact@v4
+        with:
+          name: env-file
+          path: .env
+
   api-tests:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository  # Клонирование кода репозитория в среду CI/CD
         uses: actions/checkout@v4
+
+      - name: Download .env from previous job
+        uses: actions/download-artifact@v4
+        with:
+          name: env-file
+          path: .
 
       - name: Set up Python  # Установка Python
         uses: actions/setup-python@v5
