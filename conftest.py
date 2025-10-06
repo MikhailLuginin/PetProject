@@ -1,10 +1,11 @@
 import os
-
+from dotenv import load_dotenv
 import pytest
 
 pytest_plugins = (
     "fixtures.settings",
 )
+load_dotenv()
 
 
 @pytest.fixture(scope="session")
@@ -16,4 +17,3 @@ def browser_context_args(browser_context_args):
             "height": 1080,
         }
     }
-

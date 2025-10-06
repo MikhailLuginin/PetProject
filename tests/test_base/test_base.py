@@ -22,17 +22,16 @@ class TestBase:
             assert_create_user(schema, request_user)
             validate_json_schema(instance=user.json(), schema=schema.model_json_schema())
         with allure.step("Запись данных для авторизации созданным пользователем в файл"):
-            data_user = {
-                "user_id": schema.data.id,
-                "name": schema.data.name,
-                "email": schema.data.email,
-                "password": request_user.password
-            }
-            DataUser.save(data_user)
+            update_env({
+                "USER_ID": schema.data.id,
+                "NAME": schema.data.name,
+                "EMAIL": schema.data.email,
+                "PASSWORD": request_user.password
+            })
         with allure.step("Авторизация пользователя"):
             request = LoginUserSchema(email=request_user.email, password=request_user.password)
             login = authentications_client.login_user_api(body=request)
             schema = UserSchema.model_validate_json(login.text)
             assert_status_code(login.status_code, HTTPStatus.OK)
-            assert_login_user(schema, request)
+            assert_login_user(schema, request, user_name=schema.data.name, user_id=schema.data.id)
             validate_json_schema(instance=login.json(), schema=schema.model_json_schema())

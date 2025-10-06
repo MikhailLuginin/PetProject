@@ -22,7 +22,6 @@ class TestUsers:
     @allure.title('Изменение данных юзера')
     def test_update_user(self, authentications_client):
         update_request = UpdateUserSchema()
-        print(update_request)
         user = authentications_client.update_user_api(body=update_request)
         schema = UserSchema.model_validate_json(user.text)
         assert_status_code(user.status_code, HTTPStatus.OK)

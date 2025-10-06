@@ -1,8 +1,10 @@
+import os
 from typing import Any
-
+from dotenv import load_dotenv
 from httpx import Client, Response, QueryParams
 from httpx._types import URLTypes, RequestData, RequestFiles
-from configs.config import DataUser
+
+from tools.constants import Constants
 
 
 class ApiClient:
@@ -12,8 +14,9 @@ class ApiClient:
 
     @property
     def headers(self) -> dict[str, str]:
+        load_dotenv()
         headers = {"Content-Type": "application/json"}
-        token = DataUser.user_token()
+        token = Constants.token
         if token:
             headers["x-auth-token"] = token
         return headers

@@ -1,8 +1,9 @@
-import allure
+import os
 
-from configs.config import DataUser
+import allure
 from schemas.user.user_schemas import *
 from tools.assertions.base import assert_equal
+from tools.constants import Constants
 from tools.logger import get_logger
 
 logger = get_logger("Проверка юзера")
@@ -32,7 +33,9 @@ def assert_create_user(
 @allure.step("Проверка авторизации пользователя")
 def assert_login_user(
         actual: UserSchema,
-        expected: LoginUserSchema
+        expected: LoginUserSchema,
+        user_name,
+        user_id
 ):
     """
     Проверяет, что данные, возвращённые API после авторизации юзера, соответствуют ожидаемым.
@@ -42,13 +45,12 @@ def assert_login_user(
     :raises: AssertionError: Если значения полей не совпадают.
     """
     logger.info("Проверка авторизации пользователя")
-
-    assert_equal(actual.data.name, DataUser.user_name(), "name")
+    assert_equal(actual.data.name, user_name, "name")
     assert_equal(actual.data.email, expected.email, "email")
     assert_equal(actual.status, 200, "status")
     assert_equal(actual.success, True, "success")
     assert_equal(actual.message, "Login successful", "message")
-    assert_equal(actual.data.id, DataUser.user_id(), "id")
+    assert_equal(actual.data.id, user_id, "id")
 
 
 @allure.step("Проверка изменения данных пользователя")
@@ -66,10 +68,10 @@ def assert_update_user(
     logger.info("Проверка авторизации пользователя")
 
     assert_equal(actual.data.name, expected.name, "name")
-    assert_equal(actual.data.email, DataUser.user_email(), "email")
+    assert_equal(actual.data.email, Constants.email, "email")
     assert_equal(actual.status, 200, "status")
     assert_equal(actual.success, True, "success")
     assert_equal(actual.message, "Profile updated successful", "message")
-    assert_equal(actual.data.id, DataUser.user_id(), "id")
+    assert_equal(actual.data.id,  Constants.user_id, "id")
     assert_equal(actual.data.phone, expected.phone, "phone")
     assert_equal(actual.data.company, expected.company, "company")
