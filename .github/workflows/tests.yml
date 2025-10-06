@@ -99,47 +99,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: ui-tests
 
-#    steps:
-#      - uses: actions/checkout@v4
-#
-#      - name: Download Base Allure
-#        uses: dawidd6/action-download-artifact@v11
-#        if: always()
-#        with:
-#          name: allure-base
-#          workflow: Tests
-#          path: allure-results
-#
-#      - name: Download API Allure
-#        uses: dawidd6/action-download-artifact@v11
-#        if: always()
-#        with:
-#          name: allure-api
-#          workflow: Tests
-#          path: allure-results
-#
-#      - name: Download UI Allure
-#        uses: dawidd6/action-download-artifact@v11
-#        if: always()
-#        with:
-#          name: allure-ui
-#          workflow: Tests
-#          path: allure-results
-#
-#      - name: Generate combined Allure Report
-#        uses: simple-elf/allure-report-action@v1.12
-#        if: always()
-#        with:
-#          allure_results: allure-results
-#          allure_history: allure-history
-#
-#      - name: Deploy combined report to GitHub Pages
-#        uses: peaceiris/actions-gh-pages@v4
-#        if: always()
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_branch: gh-pages  # Публикуем отчет в ветку gh-pages
-#          publish_dir: allure-history  # Папка, где находится сгенерированный отчет
     steps:
       - uses: actions/checkout@v4
 
