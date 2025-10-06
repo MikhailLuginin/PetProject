@@ -17,3 +17,10 @@ def browser_context_args(browser_context_args):
             "height": 1080,
         }
     }
+
+
+@pytest.fixture(scope="session")
+def browser_type_launch_args():
+    """Передаём параметры запуска браузера (headless / не headless)."""
+    headless = os.getenv("CI", "false").lower() == "true"
+    return {"headless": headless}
