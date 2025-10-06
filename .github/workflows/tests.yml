@@ -107,6 +107,7 @@ jobs:
         if: always()
         with:
           name: allure-base
+          workflow: Tests
           path: allure-results
 
       - name: Download API Allure
@@ -114,6 +115,7 @@ jobs:
         if: always()
         with:
           name: allure-api
+          workflow: Tests
           path: allure-results
 
       - name: Download UI Allure
@@ -121,6 +123,7 @@ jobs:
         if: always()
         with:
           name: allure-ui
+          workflow: Tests
           path: allure-results
 
       - name: Generate combined Allure Report
