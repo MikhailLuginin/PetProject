@@ -2,9 +2,9 @@ import allure
 
 from fixtures.authenticated_fixtures import *
 from schemas.user.user_schemas import *
-from tools.assertions.base import assert_status_code
-from tools.assertions.shema import validate_json_schema
-from tools.assertions.user.user import assert_update_user
+from tools.assertions.api_assertions.base import assert_status_code
+from tools.assertions.api_assertions.shema import validate_json_schema
+from tools.assertions.api_assertions.user.user import assert_update_user
 
 
 @allure.parent_suite('API tests')

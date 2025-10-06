@@ -1,4 +1,3 @@
-import os
 from http import HTTPStatus
 import pytest
 from dotenv import load_dotenv
@@ -6,7 +5,7 @@ from clients.builder import get_http_client
 from clients.user.user_client import UserClient
 from configs.config import update_env
 from schemas.user.user_schemas import LoginUserSchema, UserSchema
-from tools.assertions.base import assert_status_code
+from tools.assertions.api_assertions.base import assert_status_code
 from tools.constants import Constants
 
 

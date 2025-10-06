@@ -1,8 +1,6 @@
-import os
-
 import allure
 from schemas.user.user_schemas import *
-from tools.assertions.base import assert_equal
+from tools.assertions.api_assertions.base import assert_equal
 from tools.constants import Constants
 from tools.logger import get_logger
 

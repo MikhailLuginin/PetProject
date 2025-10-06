@@ -19,6 +19,3 @@ class RegisterPage(BasePage):
 
     def click_confirm_button(self):
         self.click(locator=RegisterLocators.confirm_button)
-
-    def get_message(self):
-        return self.get_text(RegisterLocators.message)

@@ -22,6 +22,3 @@ class LoginPage(BasePage):
 
     def click_login_button(self):
         self.click(LoginLocators.login_button)
-
-    def get_message(self):
-        return self.get_text(LoginLocators.message)
