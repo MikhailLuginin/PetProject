@@ -161,7 +161,6 @@ jobs:
         if: always()
         run: |
           mkdir -p allure-results/merged
-          cp -r allure-results/base/* allure-results/merged/ || true
           cp -r allure-results/api/* allure-results/merged/ || true
           cp -r allure-results/ui/* allure-results/merged/ || true
 
