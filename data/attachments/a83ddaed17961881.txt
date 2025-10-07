@@ -1,0 +1,6 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/login
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 200, состояние: OK от https://practice.expandtesting.com/notes/api/users/login
+
+INFO     Базовая проверка:base.py:19 Проверка, что статус код равен 200
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом PATCH по адресу https://practice.expandtesting.com/notes/api/users/profile
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 400, состояние: Bad Request от https://practice.expandtesting.com/notes/api/users/profile
