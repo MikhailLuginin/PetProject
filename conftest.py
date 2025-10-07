@@ -19,13 +19,13 @@ def browser_context_args(browser_context_args):
     }
 
 
-# @pytest.fixture(scope="session")
-# def browser_type_launch_args():
-#     """Передаём параметры запуска браузера (headless / не headless)."""
-#     headless = os.getenv("CI", "false").lower() == "true"
-#     return {"headless": headless, "slow_mo": 2000}
-#
-#
+@pytest.fixture(scope="session")
+def browser_type_launch_args():
+    """Передаём параметры запуска браузера (headless / не headless)."""
+    headless = os.getenv("CI", "false").lower() == "true"
+    return {"headless": headless, "slow_mo": 2000}
+
+
 # @pytest.fixture(autouse=True)
 # def clear_context_before_test(context):
 #     context.clear_cookies()
