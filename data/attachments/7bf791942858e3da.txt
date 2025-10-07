@@ -1,0 +1,2 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Отправка запроса с методом POST по адресу https://practice.expandtesting.com/notes/api/users/register
+INFO     HTTP_CLIENT:event_hooks.py:20 Получен ответ, код: 400, состояние: Bad Request от https://practice.expandtesting.com/notes/api/users/register
