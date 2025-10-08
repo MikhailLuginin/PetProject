@@ -14,7 +14,7 @@ from tools.routes import APIRoutes
 class TestLogin:
 
     @allure.title('Проверка успешного входа в систему')
-    def test_successful_login(self, page):
+    def test_successful_login(self, clear_context_before_test, page):
         login_page = LoginPage(page)
         assertions = BaseAssertions(page)
         with allure.step("Переход на страницу авторизации"):
@@ -35,7 +35,7 @@ class TestLogin:
             assertions.have_text(LoginLocators.message, "You logged into a secure area!")
 
     @allure.title('Проверка недопустимого имени пользователя')
-    def test_invalid_username(self, page):
+    def test_invalid_username(self, clear_context_before_test, page):
         login_page = LoginPage(page)
         assertions = BaseAssertions(page)
         username = fakers.fake_username()
@@ -55,7 +55,7 @@ class TestLogin:
             assertions.have_text(LoginLocators.message, "Your username is invalid!")
 
     @allure.title('Проверка недопустимого пароля пользователя')
-    def test_invalid_password(self, page):
+    def test_invalid_password(self, clear_context_before_test, page):
         login_page = LoginPage(page)
         assertions = BaseAssertions(page)
         password = fakers.fake_password()

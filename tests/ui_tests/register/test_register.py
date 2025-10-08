@@ -14,7 +14,7 @@ from tools.routes import APIRoutes
 class TestRegister:
 
     @allure.title('Проверка успешной регистрации')
-    def test_successful_registration(self, page):
+    def test_successful_registration(self, clear_context_before_test, page):
         password = fakers.fake_password()
         user_name = fakers.fake_username()
         register_page = RegisterPage(page)
@@ -35,7 +35,7 @@ class TestRegister:
             assertions.have_text(RegisterLocators.message, "Successfully registered, you can log in now.")
 
     @allure.title('Проверка регистрации без указания имени пользователя')
-    def test_registration_with_missing_username(self, page):
+    def test_registration_with_missing_username(self, clear_context_before_test, page):
         password = fakers.fake_password()
         register_page = RegisterPage(page)
         assertions = BaseAssertions(page)
@@ -53,7 +53,7 @@ class TestRegister:
             assertions.have_text(RegisterLocators.message, "All fields are required.")
 
     @allure.title('Проверка регистрации без указания пароля')
-    def test_registration_with_missing_password(self, page):
+    def test_registration_with_missing_password(self, clear_context_before_test, page):
         user_name = fakers.fake_username()
         password = fakers.fake_password()
         register_page = RegisterPage(page)
@@ -72,7 +72,7 @@ class TestRegister:
             assertions.have_text(RegisterLocators.message, "All fields are required.")
 
     @allure.title('Проверка регистрации с использованием несовпадающих паролей')
-    def test_registration_with_non_matching_passwords(self, page):
+    def test_registration_with_non_matching_passwords(self, clear_context_before_test, page):
         user_name = fakers.fake_username()
         password_1 = fakers.fake_password()
         password_2 = fakers.fake_password()

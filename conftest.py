@@ -26,6 +26,6 @@ def browser_type_launch_args():
     return {"headless": headless, "slow_mo": 2000}
 
 
-# @pytest.fixture(autouse=True)
-# def clear_context_before_test(context):
-#     context.clear_cookies()
+@pytest.fixture
+def clear_context_before_test(context):
+    context.clear_cookies()
