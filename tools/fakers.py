@@ -27,5 +27,9 @@ class Fakers:
     def fake_username(self):
         return self.fake.user_name()
 
+    @staticmethod
+    def random_integer():
+        return str(random.randint(1, 999999))
+
 
 fakers = Fakers()

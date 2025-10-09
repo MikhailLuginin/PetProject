@@ -9,3 +9,4 @@ class APIRoutes:
     register = "/register"
     login = "/login"
     secure = "/secure"
+    inputs = "/inputs"
