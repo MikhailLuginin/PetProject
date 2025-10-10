@@ -1,7 +1,7 @@
 import allure
 
 from configs.config import base_settings
-from pages.register_page.register_locators import RegisterLocators
+from pages.register_page.register_locators import *
 from pages.register_page.register_page import RegisterPage
 from tools.assertions.ui_assertions.base import BaseAssertions
 from tools.fakers import fakers
@@ -32,7 +32,7 @@ class TestRegister:
         with allure.step("Проверка url"):
             assertions.check_url(f"{base_settings.base_url}{APIRoutes.login}")
         with allure.step("Проверка сообщения"):
-            assertions.have_text(RegisterLocators.message_loc, "Successfully registered, you can log in now.")
+            assertions.have_text(message_loc, "Successfully registered, you can log in now.")
 
     @allure.title('Проверка регистрации без указания имени пользователя')
     def test_registration_with_missing_username(self, clear_context_before_test, page):
@@ -50,7 +50,7 @@ class TestRegister:
         with allure.step("Проверка url"):
             assertions.check_url(f"{base_settings.base_url}{APIRoutes.register}")
         with allure.step("Проверка сообщения"):
-            assertions.have_text(RegisterLocators.message_loc, "All fields are required.")
+            assertions.have_text(message_loc, "All fields are required.")
 
     @allure.title('Проверка регистрации без указания пароля')
     def test_registration_with_missing_password(self, clear_context_before_test, page):
@@ -69,7 +69,7 @@ class TestRegister:
         with allure.step("Проверка url"):
             assertions.check_url(f"{base_settings.base_url}{APIRoutes.register}")
         with allure.step("Проверка сообщения"):
-            assertions.have_text(RegisterLocators.message_loc, "All fields are required.")
+            assertions.have_text(message_loc, "All fields are required.")
 
     @allure.title('Проверка регистрации с использованием несовпадающих паролей')
     def test_registration_with_non_matching_passwords(self, clear_context_before_test, page):
@@ -91,4 +91,4 @@ class TestRegister:
         with allure.step("Проверка url"):
             assertions.check_url(f"{base_settings.base_url}{APIRoutes.register}")
         with allure.step("Проверка сообщения"):
-            assertions.have_text(RegisterLocators.message_loc, "Passwords do not match.")
+            assertions.have_text(message_loc, "Passwords do not match.")
