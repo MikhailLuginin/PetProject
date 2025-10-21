@@ -26,3 +26,17 @@ class TestInputs:
             inputs_page.click_button_visible_data()
         with allure.step("Проверка веденного числа"):
             assertions.have_text(output_integer_loc, integer)
+
+    @allure.title('Проверка ввода текста')
+    def test_input_text(self, clear_context_before_test, page):
+        inputs_page = InputsPage(page)
+        assertions = BaseAssertions(page)
+        text = fakers.fake_username()
+        with allure.step("Переход на страницу авторизации"):
+            inputs_page.open(f"{base_settings.base_url}{APIRoutes.inputs}")
+        with allure.step("Ввод текста"):
+            inputs_page.input_text(value=text)
+        with allure.step("Нажатие кнопки Отображение входных данных"):
+            inputs_page.click_button_visible_data()
+        with allure.step("Проверка веденного текста"):
+            assertions.have_text(output_text_loc, text)

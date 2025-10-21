@@ -13,3 +13,6 @@ class InputsPage(BasePage):
 
     def input_integer(self, value):
         self.input(locator=integer_loc, value=value)
+
+    def input_text(self, value):
+        self.input(locator=text_loc, value=value)
